@@ -9,8 +9,6 @@ services:
       - "host.docker.internal:host-gateway"
     volumes:
       - .:/var/www/html
-    depends_on:
-      - db
     environment:
       - DATABASE_URL=mysql://root:yii2password@db:3306/yii-template-db
 
@@ -25,17 +23,3 @@ services:
       - php
     ports:
       - "127.0.0.1:8080:80"
-
-  db:
-    image: mysql:8.0
-    volumes:
-      - ani_db:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=yii2password
-      - MYSQL_DATABASE=yii-template-db
-      - MYSQL_USER=yii2user
-      - MYSQL_PASSWORD=yii2password
-    ports:
-      - 127.0.0.1:3306:3306
-volumes:
-  ani_db:
