@@ -24,7 +24,7 @@ services:
     depends_on:
       - php
     ports:
-      - "8080:80"
+      - "127.0.0.1:8080:80"
 
   db:
     image: mysql:8.0
@@ -36,6 +36,6 @@ services:
       - MYSQL_USER=yii2user
       - MYSQL_PASSWORD=yii2password
     ports:
-      - 3306:3306
+      - 127.0.0.1:3306:3306
 volumes:
   ani_db:
