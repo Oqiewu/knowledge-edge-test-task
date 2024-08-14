@@ -9,8 +9,6 @@ services:
       - "host.docker.internal:host-gateway"
     volumes:
       - .:/var/www/html
-    environment:
-      - DATABASE_URL=mysql://root:yii2password@db:3306/yii-template-db
 
   nginx:
     image: nginx:alpine
